@@ -1,0 +1,79 @@
+class: "GraphGameTreeTest"
+alg: "MinimaxAgent"
+depth: "4"
+
+diagram: """
+            /-----a------\
+           /              \
+          /                \
+        b1                  b2
+      /    \              /    \
+   c1        c2        c3        c4
+  /  \      /  \      /   \     /   \
+ d1   d2  d3   d4    d5   d6   d7   d8
+/ \  / \  / \  / \   / \  / \  / \  / \ 
+A B  C D  E F  G H   I J  K L  M N  O P
+3 13 5 9 10 11 6 8   1 0  4 7 12 15 2 14
+
+a - max
+b - min
+c - min
+d - max
+"""
+num_agents: "3"
+
+start_state: "a"
+win_states: "A B C D E F G H I J K L M N O P"
+lose_states: ""
+
+successors: """
+a L b1
+a R b2
+b1 L c1
+b1 R c2
+b2 L c3
+b2 R c4
+c1 L d1
+c1 R d2
+c2 L d3
+c2 R d4
+c3 L d5
+c3 R d6
+c4 L d7
+c4 R d8
+d1 L A
+d1 R B
+d2 L C
+d2 R D
+d3 L E
+d3 R F
+d4 L G
+d4 R H
+d5 L I
+d5 R J
+d6 L K
+d6 R L
+d7 L M
+d7 R N
+d8 L O
+d8 R P
+"""
+
+evaluation: """
+A 3.0
+B 13.0
+C 5.0
+D 9.0
+E 10.0
+F 11.0
+G 6.0
+H 8.0
+I 1.0
+J 0.0
+K 4.0
+L 7.0
+M 12.0
+N 15.0
+O 2.0
+P 14.0
+"""
